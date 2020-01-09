@@ -14,10 +14,10 @@ router.post('/', async(req:any, res) =>{
             req.body.password
         )
 
-        let token:any = await createToken({userid: result.insertid})
+        let token:any = await createToken({userid: result.insertId})
         res.json({
             token,
-            userid: result.insertid,
+            userid: result.insertId,
             role:'admin'
         })
     } catch (error) {
