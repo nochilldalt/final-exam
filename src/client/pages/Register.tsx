@@ -16,7 +16,9 @@ const Register: React.FC<RegisterProps> = (props) => {
                 email,
                 password
             })
+            
             setLogin(info.token, info.userid, info.role)
+            console.log(setLogin)
             props.history.push('/')
         } catch (error) {
             console.log(error)
