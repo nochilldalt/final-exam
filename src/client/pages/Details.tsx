@@ -3,6 +3,7 @@ import { RouteComponentProps } from 'react-router';
 import { useState, useEffect } from 'react';
 import { IBook } from '../utils/interfaces';
 import { json } from '../utils/api-services';
+import { Link } from 'react-router-dom';
 
 const Details: React.FC<DetailsProps> = (props) => {
 
@@ -32,6 +33,7 @@ const Details: React.FC<DetailsProps> = (props) => {
                 <h1>{book.title}</h1>
                 <h4>{book.author}</h4>
                 <h6>{book.author}</h6>
+                <Link to={`/edit/${props.match.params.id}`}>edit</Link>
             </article>
         </div>
     )

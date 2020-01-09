@@ -22,6 +22,7 @@ const Home: React.FC<HomeProps> = () => {
     return(
         <div>
         <h1>Home Page</h1>
+        <L
         {books.map(book => {
                 return (
                     <article className="col-md-6" key={`Blog${book.id}`}>
