@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import Details from './pages/Details';
 import Edit from './pages/Edit';
 import Add from './pages/Add';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 const App: React.FC<AppProps> = () => {
 	return(
@@ -13,6 +15,8 @@ const App: React.FC<AppProps> = () => {
 			<Route exact path = '/details/:id' component={Details} />
 			<Route exact path= '/edit/:id' component={Edit} />
 			<Route exact path='/add' component={Add} />
+			<Route exact path='/login' component={Login} />
+			<Route exact path='/register' component={Register} />
 
 		</Switch>
 		</BrowserRouter>

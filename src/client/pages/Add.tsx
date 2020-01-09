@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { useState } from 'react';
 import { json } from '../utils/api-services';
+import { RouteComponentProps } from 'react-router-dom';
 
-const Template: React.FC<TemplateProps> = () => {
+const Add: React.FC<AddProps> = (props) => {
 
     const [categoryid, setCategroyid] = useState<string>('0')
     const [title, setTitle] = useState<string>('')
@@ -18,6 +19,7 @@ const Template: React.FC<TemplateProps> = () => {
                 author,
                 price
             })
+            props.history.push('/')
         } catch (error) {
             console.log(error)
         }
@@ -25,7 +27,7 @@ const Template: React.FC<TemplateProps> = () => {
 
     return (
         <div>
-            <h1>Template Page</h1>
+            <h1>Add Page</h1>
             <form>
                 <input type="text" value={categoryid} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCategroyid(e.target.value)} />
                 <input type="text" value={title} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)} />
@@ -37,6 +39,6 @@ const Template: React.FC<TemplateProps> = () => {
     )
 }
 
-interface TemplateProps { }
+interface AddProps extends RouteComponentProps{ }
 
-export default Template
+export default Add
