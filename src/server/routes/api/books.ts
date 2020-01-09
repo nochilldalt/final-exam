@@ -27,4 +27,33 @@ router.get('/:id', async (req:any, res) => {
     }
 })
 
+router.post("/",async (req: any, res) => {
+    try {
+      let book = await db.books.post(
+        req.body.categoryid,
+        req.body.title,
+        req.body.author,
+        req.body.price
+      );
+      res.json(book);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json(" My code suck let me kno");
+    }
+  });
+  
+  router.delete("/:id",async (req: any, res) => {
+    try {
+      let book = await db.books.destroy(req.params.id);
+      res.json(book);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json(" My code suck let me kno");
+    }
+  });
+
+  router.put("/:id", async(req:any, res)=>{
+      
+  })
+
 export default router;
